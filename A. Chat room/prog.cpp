@@ -4,50 +4,22 @@
 using namespace std;
 int main(void)
 {
-    string s;
+    string s,ans,comp="hello";
     cin>>s;
-    unordered_map<char,int>mp;
+    int j=0;
     for(int i=0;i<s.size();i++)
     {
-        if(s[i]=='h' && mp.find('h')==mp.end())
+        if(s[i]==comp[j])
         {
-            mp['h']=i;
-        }
-        else if(s[i]=='e' && mp.find('e')==mp.end())
-        {
-            mp['e']=i;
-        }
-        else if(s[i]=='l' && mp.find('l')==mp.end())
-        {
-            mp['l']=i;
-        }
-        else if(s[i]=='l' && mp.find('l')!=mp.end())
-        {
-            mp['!']=i;
-        }
-        else if(s[i]=='o' && mp.find('o')==mp.end())
-        {
-            mp['o']=i;
+            ans+=s[i];
+            j++;
         }
     }
-    string arr;
-    for(auto i:mp)
-    {
-        if(i.first=='!')
-        {
-            arr.push_back('l');
-        }
-        else
-        {
-            arr.push_back(i.first);
-        }
-    }
-    reverse(arr.begin(),arr.end());
-    if(arr=="hello")
+    if(ans=="hello")
     {
         cout<<"YES"<<endl;
     }
-    else 
+    else
     {
         cout<<"NO"<<endl;
     }

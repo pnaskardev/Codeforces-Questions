@@ -32,5 +32,13 @@ void solve()
             c_c++;
         }
     }
-    
+    int ans=(b_c-a_c)-c_c;
+    if(ans==0)
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
 }

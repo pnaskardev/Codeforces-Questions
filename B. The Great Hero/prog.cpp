@@ -28,17 +28,14 @@ void solve()
     }
     for(int i=0;i<n;i++)
     {
-        vect.push_back(make_pair(arr1[i],arr[i]));
+        vect.push_back(make_pair(arr[i],arr1[i]));
     }
     sort(vect.begin(),vect.end());
     for(int i=0;i<vect.size();i++)
     {
-        swap(vect[i].first,vect[i].second);
-    }
-    for(int i=0;i<vect.size();i++)
-    {
         if(b<=0)
         {
+
             cout<<"NO"<<endl;
             return;
         }
@@ -60,7 +57,7 @@ void solve()
         b-=t_matches*vect[i].first;
         vect[i].second-=t_matches*a;
     }
-    if(vect[n-1].second>0)
+    if(vect[n-1].second>0 )
     {
         cout<<"NO"<<endl;
     }

@@ -1,0 +1,11 @@
+for(int i=0;i<n;i++)
+    // {
+    //     if(mp.find(a[i])!=mp.end())
+    //     {
+    //         a.erase(a.begin()+i);
+    //     }
+    //     else
+    //     {
+    //         continue;
+    //     }
+    // }

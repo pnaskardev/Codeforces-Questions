@@ -32,6 +32,22 @@ void solve()
     // {
     //     cout<<i<<" ";
     // }
+    // cout<<endl;
+    // for(auto i:arr)
+    // {
+    //     if(i==0)
+    //     {
+    //         continue;
+    //     }
+    //     else if(i==3||i%3==0)
+    //     {
+    //         cout<<0<<endl;
+    //     }
+    //     else
+    //     {
+    //         cout<<1<<endl;
+    //     }
+    // }
     if((a1+a3-2*a2)%3==0)
     {
         cout<<0<<endl;

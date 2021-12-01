@@ -1,0 +1,1 @@
+{"name":"Local: prog","url":"d:\\Programming\\Codeforces-Questions\\A. Make Even\\prog.cpp","tests":[{"id":1637852420099,"input":"4\n3876\n387\n4489\n3","output":"0\n2\n1\n-1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Codeforces-Questions\\A. Make Even\\prog.cpp","group":"local","local":true}

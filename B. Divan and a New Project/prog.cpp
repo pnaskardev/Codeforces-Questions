@@ -16,56 +16,24 @@ void solve()
 {
     int n;
     cin>>n;
-    if(n==1)
-    {
-        cout<<0<<" "<<1<<endl;
-        return;
-    }
-    vector<pair<int,int>>vec(n);
+    vector<int>a(n);
     for(int i=0;i<n;i++)
     {
-        cin>>vec[i].first;
-        vec[i].second=i+1;
+        cin>>a[i];
     }
-    sort(vec.rbegin(),vec.rend());
-    // for(auto i:vec)
-    // {
-    //     cout<<i.first<<" "<<i.second<<endl;
-    // }
-    // cout<<endl;
-    queue<pair<int,int>>st;
-    for(auto i:vec)
+    sort(a.rbegin(),a.rend());
+    queue<int>q;
+    for(auto i:a)
     {
-        st.push(make_pair(i.first,i.second));
+        q.push(i);
     }
     vector<int>ans(n+1);
-    int j=0;
-    while(st.size()>0 && j<1)
+    while(q.size()>0)
     {
-        pair<int,int>p=st.front();
-        ans[p.second]=j;
-        j++;
-        st.pop();
-        
+        pair<int,int>p=q.front();
+        ans[p.first-1]=p.second;
+        q.pop();
     }
-    // cout<<"j->"<<j<<endl;
-    ans[j]=1;
-    j++;
-    // cout<<"j->"<<j<<endl;
-    while(st.size()>0 && j<n+1)
-    {
-        pair<int,int>p=st.front();
-        ans[p.second]=j;
-        j++;
-        st.pop();
-    }
-    int sum=0;
-    ans[0]=1;
-    for(int i=1;i<n+1;i++)
-    {
-        sum+=2*(abs(ans[0]-ans[i]));
-    }
-    cout<<sum<<endl;
     for(auto i:ans)
     {
         cout<<i<<" ";

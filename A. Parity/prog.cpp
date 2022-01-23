@@ -5,12 +5,6 @@ using namespace std;
 void solve();
 int32_t main(void)
 {
-    // int t;
-    // cin>>t;
-    // while(t--)
-    // {
-    //     solve();
-    // }
     solve();
 }
 void solve()

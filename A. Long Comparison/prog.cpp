@@ -14,39 +14,45 @@ int32_t main(void)
 }
 void solve()
 {
-    string x1,x2; 
+    int x1,x2; 
     int p1,p2;
     cin>>x1>>p1;
     cin>>x2>>p2;
-    while(p1--)
-    {
-        x1+='0';
-    }
-    while(p2--)
-    {
-        x2+='0';
-    }
-    int num1=0;
-    int num2=0;
-    for(int i=0;i<x1.length();i++)
-    {
-        num1=num1*10+(x1[i]-'0');
-    }
-    for(int i=0;i<x2.length();i++)
-    {
-        num2=num2*10+(x2[i]-'0');
-    }
-    // cout<<num1<<" "<<num2<<endl;
-    if(num1<num2)
-    {
-        cout<<"<"<<endl;
-        return;
-    }
+    int num1=0,num2=0;
+    num1=log10(x1)+1+p1;
+    num2=log10(x2)+1+p2;
     if(num1>num2)
     {
         cout<<">"<<endl;
-        return;
     }
-    cout<<"="<<endl;
-    
+    else if(num1<num2)
+    {
+        cout<<"<"<<endl;
+    }
+    else
+    {
+        int minim=min(p1,p2);
+        p1=p1-minim;
+        p2=p2-minim;
+        while(p1--)
+        {
+            x1=x1*10;
+        }
+        while(p2--)
+        {
+            x2=x2*10;
+        }
+        if(x1==x2)
+        {
+            cout<<"="<<endl;
+        }
+        else if(x1>x2)
+        {
+            cout<<">"<<endl;
+        }
+        else 
+        {
+            cout<<"<"<<endl;
+        }
+    } 
 }

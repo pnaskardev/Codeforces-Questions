@@ -3,6 +3,8 @@
 #define int long long int
 using namespace std;
 void solve();
+int maxim(vector<int>arr,int start,int end);
+int minim(vector<int>arr,int start,int end);
 int32_t main(void)
 {
     int t;
@@ -16,41 +18,46 @@ void solve()
 {
     int n,a,b;
     cin>>n>>a>>b;
-    vector<int>arr(n);
-    arr[0]=a;
-    int j=n;
-    for(int i=1;i<=(n/2);i++)
+    vector<int>arr;
+    arr.push_back(a);
+    for(int i=n;i>0;i--)
     {
-        if(j!=b &&j!=a && arr[i-1]!=j)
+        if(i!=a && i!=b)
         {
-            arr[i]=j;
-            j--;
-        }
-        else
-        {
-            j--;
-            arr[i]=j;
+            arr.push_back(i);
         }
     }
-    j=1;
-    for(int i=(n/2);i<=n-1;i++)
+    arr.push_back(b);
+    int l_min=minim(arr,0,(n/2)-1);
+    int r_max=maxim(arr,(n/2),n-1);
+    // cout<<l_min<<" "<<r_max<<endl;
+    if(l_min!=a || r_max!=b)
     {
-        if(j!=a &&j!=b )
-        {
-            j++;
-            arr[i]=j;
-            // j++;
-        }
-        else
-        {
-            j++;
-            arr[i]=j;
-        }
+        cout<<-1<<endl;
+        return;
     }
-    arr[n-1]=b;
     for(auto i:arr)
     {
         cout<<i<<" ";
     }
     cout<<endl;
+    // cout<<endl;
+}
+int maxim(vector<int>arr,int start,int end)
+{
+    int max_el=INT_MIN;
+    for(int i=start;i<=end;i++)
+    {
+        max_el=max(arr[i],max_el);
+    }
+    return max_el;
+}
+int minim(vector<int>arr,int start,int end)
+{
+    int min_el=INT_MAX;
+    for(int i=start;i<=end;i++)
+    {
+        min_el=min(arr[i],min_el);
+    }
+    return min_el;
 }

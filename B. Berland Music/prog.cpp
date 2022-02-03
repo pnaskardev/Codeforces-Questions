@@ -16,59 +16,44 @@ void solve()
 {
     int n;
     cin>>n;
-    vector<int>arr(n);
+    string s;
+    vector<int>arr(n),final(n);
+    vector<int>liked,disliked;
+    unordered_map<int,int>mp;
     for(int i=0;i<n;i++)
     {
         cin>>arr[i];
+        final[i]=arr[i];
+        mp[arr[i]]=i;
     }
-    string s;
     cin>>s;
-    int z=0,o=0;
-    for(auto i:s)
-    {
-        if(i=='0')
-        {
-            z++;
-        }
-        else if(i=='1')
-        {
-            o++;
-        }
-    }
-    if(o==n ||z==n)
-    {
-        for(auto i:arr)
-        {
-            cout<<i<<" ";
-        }
-         cout<<endl;
-        return;
-    }
-    sort(arr.begin(),arr.end());
-    deque<int>q;
-    deque <int> :: iterator it;
-    for(auto i:arr)
-    {
-        q.push_back(i);
-    }
-    vector<int>ans;
     for(int i=0;i<n;i++)
     {
         if(s[i]=='0')
         {
-            ans.push_back(q.front());
-            q.pop_front();
+            disliked.push_back(arr[i]);
         }
-        else if(s[i]=='1')
+        if(s[i]=='1')
         {
-            ans.push_back(q.back());
-            q.pop_back();
+            liked.push_back(arr[i]);
         }
     }
-    for(auto i:ans)
+    sort(liked.rbegin(),liked.rend());
+    sort(disliked.rbegin(),disliked.rend());
+    sort(arr.rbegin(),arr.rend());
+    int i;
+    for(i=0;i<liked.size();i++)
+    {
+        final[mp[liked[i]]]=arr[i];
+    }
+    for(int j=0;j<disliked.size();j++)
+    {
+        final[mp[disliked[j]]]=arr[i];
+        i++;
+    }
+    for(auto i:final)
     {
         cout<<i<<" ";
     }
     cout<<endl;
-    return;
 }

@@ -1,0 +1,1 @@
+{"name":"Local: prog","url":"d:\\Programming\\Codeforces-Questions\\A. Omkar and Bad Story\\prog.cpp","tests":[{"id":1644763558590,"input":"4\n3\n3 0 9\n2\n3 4\n5\n-7 3 13 -2 8\n4\n4 8 12 6\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Codeforces-Questions\\A. Omkar and Bad Story\\prog.cpp","group":"local","local":true}

@@ -48,6 +48,10 @@ void solve()
                             j++;
                         }
                     }
+                    else 
+                    {
+                        break;
+                    }
                     
                 }
             }
@@ -67,6 +71,10 @@ void solve()
                         {
                              j++;
                         }
+                    }
+                    else
+                    {
+                        break;
                     }
                 }
             }

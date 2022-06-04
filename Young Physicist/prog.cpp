@@ -2,6 +2,10 @@
 #include<bits/stdc++.h>
 #define int long long int
 using namespace std;
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
 int32_t main(void)
 {
     int n,finalsum=0,sumx=0,sumy=0,sumz=0;
@@ -23,3 +27,5 @@ int32_t main(void)
         cout<<"NO"<<endl;
     }
 }
+
+

@@ -1,0 +1,1 @@
+{"name":"Local: prog","url":"d:\\Programming\\Codeforces-Questions\\A. Noldbach problem\\prog.cpp","tests":[{"id":1655128905732,"input":"27 2","output":"YES"},{"id":1655128908986,"input":"45 7","output":"NO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Codeforces-Questions\\A. Noldbach problem\\prog.cpp","group":"local","local":true}

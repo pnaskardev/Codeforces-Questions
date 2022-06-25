@@ -21,12 +21,11 @@ void solve()
 {
     int n,number;
     cin>>n>>number;
-    int pal=0,temp=n;
+    int pal=0,pal2=0,temp=n;
     while(temp--)
     {
         pal=pal*10+9;
     }
-    int pal2=0;
     temp=n+1;
     while(temp--)
     {
@@ -38,10 +37,10 @@ void solve()
     // cout<<l<<endl;
     if(l!=n)
     {
-        cout<<abs(pal2-number)<<endl;
+        cout<<pal2-number<<endl;
     }
     else
     {
-        cout<<abs(pal-number)<<endl;
+        cout<<pal-number<<endl;
     }
 }

@@ -16,27 +16,36 @@ void solve()
 {
     int n;
     cin>>n;
-    vector<int>a(n);
+    vector<pair<int,int>>arr(n);
     for(int i=0;i<n;i++)
     {
-        cin>>a[i];
+        cin>>arr[i].first;
+        arr[i].second=i;
     }
-    sort(a.rbegin(),a.rend());
-    queue<int>q;
-    for(auto i:a)
+    sort(arr.begin(),arr.end());
+    int time=0;
+    vector<int>ans(n);
+    int idx=1;
+    for(int i=n-1;i>=0;i=i-2)
     {
-        q.push(i);
+        int temp=2*idx;
+        time=time+(arr[i].first)*temp;
+        ans[arr[i].second]=idx;
+        idx++;
     }
-    vector<int>ans(n+1);
-    while(q.size()>0)
+    idx=-1;
+    for(int i=n-2;i>=0;i=i-2)
     {
-        pair<int,int>p=q.front();
-        ans[p.first-1]=p.second;
-        q.pop();
+        int temp=2*abs(idx);
+        time=time+(arr[i].first)*temp;
+        ans[arr[i].second]=idx;
+        idx--;
     }
-    for(auto i:ans)
+    cout<<time<<endl;
+    cout<<0<<" ";
+    for(int i=0;i<n;i++)
     {
-        cout<<i<<" ";
+        cout<<ans[i]<<" ";
     }
     cout<<endl;
 }

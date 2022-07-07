@@ -1,0 +1,1 @@
+{"name":"Local: prog","url":"d:\\Programming\\Codeforces-Questions\\C. Wrong Addition\\prog.cpp","tests":[{"id":1657114225710,"input":"6\n17236 1106911\n1 5\n108 112\n12345 1023412\n1 11\n1 20\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Codeforces-Questions\\C. Wrong Addition\\prog.cpp","group":"local","local":true}
